@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Reserva de evento</title>
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+
+  <!-- 🎯 max-w-2xl mx-auto: centra el formulario en desktop y limita su ancho -->
+  <main class="max-w-2xl mx-auto">
+    <div class="bg-white rounded-2xl shadow p-8">
+
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">Reservar entrada</h1>
+      <p class="text-gray-500 mb-6">Centro Cultural Municipal</p>
+
+      <form class="space-y-4">
+
+        <!-- FILA 1: Nombre y Email -->
+        <!-- 🎯 grid grid-cols-1 md:grid-cols-2: mobile=1 columna, tablet+=2 columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Nombre completo
+            </label>
+            <input type="text" placeholder="Ej: Ana García"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2
+                     focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
+            <input type="email" placeholder="ana@email.com"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2
+                     focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+        </div>
+
+        <!-- FILA 2: Teléfono y Evento -->
+        <!-- 🎯 mismo comportamiento que fila 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Teléfono
+            </label>
+            <input type="tel" placeholder="+54 9 11 ..."
+              class="w-full border border-gray-300 rounded-lg px-4 py-2
+                     focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Evento
+            </label>
+            <select class="w-full border border-gray-300 rounded-lg px-4 py-2
+                           focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <option>Seleccioná un evento</option>
+              <option>Concierto de jazz — 20 jul</option>
+              <option>Teatro independiente — 22 jul</option>
+              <option>Charla de diseño — 25 jul</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- FILA 3: Fecha y Cantidad -->
+        <!-- 🎯 mismo comportamiento -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Fecha
+            </label>
+            <input type="date"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2
+                     focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">
+              Cantidad de personas
+            </label>
+            <input type="number" min="1" max="10" placeholder="1"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2
+                     focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          </div>
+        </div>
+
+        <!-- Comentarios: siempre ancho completo -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">
+            Comentarios adicionales
+          </label>
+          <textarea rows="3" placeholder="Requerimientos especiales, accesibilidad, etc."
+            class="w-full border border-gray-300 rounded-lg px-4 py-2
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none">
+          </textarea>
+        </div>
+
+        <!-- Botón -->
+        <!-- 🎯 w-full: ocupa todo el ancho en mobile | lg:w-auto: se ajusta al contenido en desktop -->
+        <button type="submit"
+          class="w-full lg:w-auto bg-blue-600 hover:bg-blue-700 active:scale-95
+                 text-white font-medium px-6 py-3 rounded-lg transition">
+          Confirmar reserva
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>
